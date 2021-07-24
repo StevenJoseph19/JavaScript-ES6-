@@ -3,16 +3,17 @@ describe("how let works", function(){
 	it("will provide block scoping, unlike var", function(){
 
 		var doWork = function(flag){
-
+			// var x = undefined;
 			if(flag){
 				let x = 3;
+					// var x = 3;
 				return x;
 			}
-
+			// return x;
 		};
 
 		var result = doWork(true);
-		expect(result).toBe("?");
+		expect(result).toBe(3);
 	});
 
 
@@ -24,11 +25,12 @@ describe("how let works", function(){
 			}
 			
 			/* return i won't work */
-			return 0;		
+			// return 0;		
+			return i;	
 		};
 
 		var result = doWork();
-		expect(result).toBe("?");
+		expect(result).toBe(10);
 
 	});	
 });

@@ -9,9 +9,9 @@ describe("destructuring", function() {
 
 		let [, x, y, z] = doWork();
 
-		expect(x).toBe("?");
-		expect(y).toBe("?");
-		expect(z).toBe("?");
+		expect(x).toBe(3);
+		expect(y).toBe(2);
+		expect(z).toBeUndefined();
 
 	});
 
