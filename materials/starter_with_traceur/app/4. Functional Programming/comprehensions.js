@@ -16,11 +16,22 @@ describe("comprehensions", function() {
 		}
 		expect(numbers).toEqual([1, 4, 9]);
 
-		let numbers = [for (n of [1,2,3]) if(n > 1) n * n];
+		let numbers = [for (n of [1, 2, 3]) if (n > 1) n * n];
+				let numbers = [for n of [1,2,3] if(n > 1) n * n];
 		expect(numbers).toEqual([4,9]);
 
-		let numbers2 = (for (n of [1,2,3]) n * n);
-		expect(Array.from(numbers2)).toEqual([1,4,9]);
+		// let numbers2 = (for   (var n of [1,2,3]) n * n);
+			// let numbers2 = for   ( n of [1,2,3]) n * n);
+		 for   ( n of [1,2,3]  if (n > 1)) n * n;
+		
+	expect(Array.from(numbers2)).toEqual([1, 4, 9]);
+
+	var arr=[[1,2],[3,4],[5,6]];
+
+animals = ["cow", "bird", "fish", "horse", "tiger"]
+
+var newList = [animal for animal in animals if "i" in animal]
+}
 
 	});
 

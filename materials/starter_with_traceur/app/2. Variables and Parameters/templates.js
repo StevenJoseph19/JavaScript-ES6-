@@ -4,10 +4,11 @@ describe("template literals", function(){
 
 		let doWork = function(name){
 			return `Hello, ${name}`;
+				// return "Hello, ${name}";
 		};
 
 		let result = doWork("Scott");
-		expect(result).toBe("?");
+		expect(result).toBe("Hello, Scott");
 
 	});
 
@@ -19,7 +20,7 @@ describe("template literals", function(){
 
 		let url = `http://apiserver/${category}/${id}`;
 
-		expect(url).toBe("?");
+		expect(url).toBe("http://apiserver/music/2112");
 	});
 
 	it("can use tags", function(){
@@ -39,7 +40,7 @@ describe("template literals", function(){
 		var y = 3;
 		var result = upper `${x} + ${y} is ${x+y}`;
 
-		expect(result).toBe("?");
+		expect(result).toBe("1 + 3 IS 4");
 
 	});
 

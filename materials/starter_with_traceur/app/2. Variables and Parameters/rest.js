@@ -11,7 +11,7 @@ describe("rest parameters", function(){
 		};
 
 		let result = doWork("Scott", 1, 2, 3);
-		expect(result).toBe("?");
+		expect(result).toBe(6);
 
 	});
 	

@@ -64,6 +64,7 @@ describe("the class keyword", function(){
 			}
 
 			set name(newValue) {
+				
 				this._name = newValue;
 			}
 		}

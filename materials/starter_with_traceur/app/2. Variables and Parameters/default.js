@@ -2,13 +2,14 @@ describe("default parameters", function(){
 
 	it("provides defaults", function(){
 
-		var doWork = function(name="Scott") {						
+		var doWork = function (name = "Scott") {
+	
 			return name;
 		};
 
 		var result = doWork();
 
-		expect(result).toBe("?");
+		expect(result).toBe("Scott");
 
 	});
 
@@ -20,9 +21,9 @@ describe("default parameters", function(){
 
 		let [a,b,c] = doWork(5, undefined);
 
-		expect(a).toBe("?");
-		expect(b).toBe("?");
-		expect(c).toBe("?");
+		expect(a).toBe(5);
+		expect(b).toBe(2);
+		expect(c).toBe(3);
 	});
 
 	it("works with destructuring", function() {
@@ -40,7 +41,7 @@ describe("default parameters", function(){
 				}
 			);
 		
-		expect(result).toBe("?");
+		expect(result).toBe("Scott");
 
 	});
 

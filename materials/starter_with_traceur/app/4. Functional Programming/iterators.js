@@ -22,6 +22,14 @@ describe("iterables", function(){
 		// iterator
 		sum = 0;
 
+		// let iterator = numbers.values();
+		// let next = iterator.next();
+		// while (!next.done) {
+		// 	sum += next.value;
+		// 	next = iterator.next();
+		// }
+		// expect(sum).toBe(10);
+
 		let iterator = numbers[Symbol.iterator]();
 		let next = iterator.next();
 		while(!next.done){
@@ -32,7 +40,6 @@ describe("iterables", function(){
 	});
 
 });
-
 describe("for of", function() {
 
 	it("can work with iteratables at a high level", function(){
@@ -51,9 +58,9 @@ describe("for of", function() {
 
 describe("iterable", function(){
 
-	it("can be built by implementing Symbol.iterator", function(){
-
-		class Company {	
+	it("can be built by implementing Symbol.iterator", function () {
+		
+			class Company {	
 			constructor() {
 				this.employees = [];
 			}
@@ -66,31 +73,44 @@ describe("iterable", function(){
 			}
 		}
 
-		class ArrayIterator {
-			constructor(array) {
-				this.array = array;
-				this.index = 0;
-			}
-			next() {
-				var result = { value: undefined, done: true };
-				if(this.index < this.array.length) {
-					result.value = this.array[this.index];
-					result.done = false;
-					this.index += 1;	
-				}
-				return result;
+		// class Company {	
+		// 	constructor() {
+		// 		this.employees = [];
+		// 	}
+			
+		// 	addEmployees(...names) {
+		// 		this.employees = this.employees.concat(names);
+		// 	}	
+		// 	[Symbol.iterator]() {
+		// 		return new ArrayIterator(this.employees);
+		// 	}
+		// }
+
+		// class ArrayIterator {
+		// 	constructor(array) {
+		// 		this.array = array;
+		// 		this.index = 0;
+		// 	}
+		// 	next() {
+		// 		var result = { value: undefined, done: true };
+		// 		if(this.index < this.array.length) {
+		// 			result.value = this.array[this.index];
+		// 			result.done = false;
+		// 			this.index += 1;	
+		// 		}
+		// 		return result;
 				
-			}
-		}
+		// 	}
+		// }
 
-		let count = 0;
-		let company = new Company();
-		company.addEmployees("Tim", "Sue", "Joy", "Tom");
+		// let count = 0;
+		// let company = new Company();
+		// company.addEmployees("Tim", "Sue", "Joy", "Tom");
 
-		for(let employee of company) {
-			count += 1;
-		}
+		// for(let employee of company) {
+		// 	count += 1;
+		// }
 
-		expect(count).toBe(4);
+		// expect(count).toBe(4);
 	});
 });

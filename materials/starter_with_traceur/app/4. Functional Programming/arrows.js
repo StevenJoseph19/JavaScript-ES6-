@@ -2,16 +2,32 @@ describe("arrow functions", function(){
 
 	it("provide a compact syntax to define a function", function(){
 
-		let add = (x,y) => {
+		let add = (x, y) => {
 			let temp = x + y;
 			return temp;
-		};
+		}
+		
 		let square = x => x * x;
 		let three = () => 3;
 
-		expect(square(add(2,three()))).toBe(25);
+		expect(square(add(2, three()))).toBe(25);		
+		expect(add(2, 3)).toBe(5);
+		expect(square(add(2, 3))).toBe(25);
 
 	});
+
+	// it("provide a compact syntax to define a function", function(){
+
+	// 	let add = (x,y) => {
+	// 		let temp = x + y;
+	// 		return temp;
+	// 	};
+	// 	let square = x => x * x;
+	// 	let three = () => 3;
+
+	// 	expect(square(add(2,three()))).toBe(25);
+
+	// });
 
 	it("can be used with array methods", function(){
 
@@ -22,18 +38,21 @@ describe("arrow functions", function(){
 		expect(sum).toBe(10);
 
 		var doubled = numbers.map(n => n * 2);
+		// var doubled = numbers;
 		expect(doubled).toEqual([2,4,6,8]);
 	});
 
 	it("lexically binds to 'this'", function(done) {
 
 		this.name = "Scott";
+
 	
-		setTimeout(() => {
+		setTimeout(() => {	
 			expect(this.name).toBe("Scott");
 			done();
 		},15);
-		
+
 	});
+
 
 });
